@@ -28,8 +28,152 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
+<style>
+  .image-row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .big-img {
+    max-width: 300px;
+    height: auto;
+  }
+
+  .Slideimage {
+    max-width: 400px;
+    height: 400px;
+  }
+
+  .small-images-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    margin-left: 10px;
+  }
+
+  .small-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+</style>
+
+<style>
+  .thumbnail-images {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .thumbnail-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .thumbnail-img:hover {
+    border-color: #574c16;
+  }
+
+  .product-carousel {
+    background-color: #f8f9fa;
+  }
+
+  .product-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-holder {
+    position: relative;
+  }
+
+  .product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product-images {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .btn-wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .video-bg {
+    text-align: center;
+  }
+
+  .video-image {
+    height: 400px;
+    max-width: auto;
+  }
+</style>
+
+<style>
+  .floating-btn {
+    position: fixed;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .whatsapp {
+    bottom: 50px;
+  }
+
+  .messenger {
+    bottom: 20px;
+  }
+
+  .floating-btn img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .floating-btn:hover {
+    transform: scale(1.1);
+  }
+</style>
 
 <body class="homepage">
+  <a href="https://wa.me/+213550904908" target="_blank" class="floating-btn whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <defs>
       <symbol xmlns="http://www.w3.org/2000/svg" id="instagram" viewBox="0 0 15 15">
@@ -215,25 +359,21 @@
               <h6 class="my-0">Growers cider</h6>
               <small class="text-body-secondary">Brief description</small>
             </div>
-            <span class="text-body-secondary">$12</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Fresh grapes</h6>
               <small class="text-body-secondary">Brief description</small>
             </div>
-            <span class="text-body-secondary">$8</span>
           </li>
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
               <h6 class="my-0">Heinz tomato ketchup</h6>
               <small class="text-body-secondary">Brief description</small>
             </div>
-            <span class="text-body-secondary">$5</span>
           </li>
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (USD)</span>
-            <strong>$20</strong>
           </li>
         </ul>
 
@@ -346,12 +486,21 @@
       <div class="row">
         <div class="swiper main-swiper py-4" data-aos="fade-up" data-aos-delay="600">
           <div class="swiper-wrapper d-flex border-animation-left">
+
+            <!-- Slide 1 -->
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
-                <div class="image-holder">
-                  <a href="#">
-                    <img src="images/banner-image-6.jpg" alt="product" class="img-fluid">
-                  </a>
+                <div class="image-row">
+                  <div class="image-holder">
+                    <a href="#">
+                      <img src="images/banner-image-6.webp" alt="product" class="img-fluid big-img">
+                    </a>
+                  </div>
+                  <div class="small-images-grid">
+                    <img src="images/banner-image-1.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-2.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-6.webp" alt="product" class="small-img">
+                  </div>
                 </div>
                 <div class="banner-content py-4">
                   <h5 class="element-title text-uppercase">
@@ -364,12 +513,21 @@
                 </div>
               </div>
             </div>
+
+            <!-- Slide 2 -->
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
-                <div class="image-holder">
-                  <a href="#">
-                    <img src="images/banner-image-1.jpg" alt="product" class="img-fluid">
-                  </a>
+                <div class="image-row">
+                  <div class="image-holder">
+                    <a href="#">
+                      <img src="images/banner-image-1.webp" alt="product" class="img-fluid big-img">
+                    </a>
+                  </div>
+                  <div class="small-images-grid">
+                    <img src="images/banner-image-2.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-6.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-1.webp" alt="product" class="small-img">
+                  </div>
                 </div>
                 <div class="banner-content py-4">
                   <h5 class="element-title text-uppercase">
@@ -382,12 +540,21 @@
                 </div>
               </div>
             </div>
+
+            <!-- Slide 3 -->
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
-                <div class="image-holder">
-                  <a href="#">
-                    <img src="images/banner-image-2.jpg" alt="product" class="img-fluid">
-                  </a>
+                <div class="image-row">
+                  <div class="image-holder">
+                    <a href="#">
+                      <img src="images/banner-image-2.webp" alt="product" class="img-fluid big-img">
+                    </a>
+                  </div>
+                  <div class="small-images-grid">
+                    <img src="images/banner-image-6.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-1.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-2.webp" alt="product" class="small-img">
+                  </div>
                 </div>
                 <div class="banner-content py-4">
                   <h5 class="element-title text-uppercase">
@@ -400,34 +567,51 @@
                 </div>
               </div>
             </div>
+
+            <!-- Slide 4 -->
             <div class="swiper-slide">
               <div class="banner-item image-zoom-effect">
-                <div class="image-holder">
-                  <a href="#">
-                    <img src="images/banner-image-3.jpg" alt="product" class="img-fluid">
-                  </a>
+                <div class="image-row">
+                  <div class="image-holder">
+                    <a href="#">
+                      <img src="images/banner-image-3.webp" alt="product" class="img-fluid big-img">
+                    </a>
+                  </div>
+                  <div class="small-images-grid">
+                    <img src="images/banner-image-3.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-3.webp" alt="product" class="small-img">
+                    <img src="images/banner-image-3.webp" alt="product" class="small-img">
+                  </div>
                 </div>
                 <div class="banner-content py-4">
                   <h5 class="element-title text-uppercase">
                     <a href="index.html" class="item-anchor">A Shopping Experience You’ll Love</a>
                   </h5>
-                  <p> Immersive, interactive, and fun. Shopping has never felt this personal.</p>
+                  <p>Immersive, interactive, and fun. Shopping has never felt this personal.</p>
                   <div class="btn-left">
                     <a href="#" class="btn-link fs-6 text-uppercase item-anchor text-decoration-none">Discover Now</a>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
+
           <div class="swiper-pagination"></div>
         </div>
-        <div class="icon-arrow icon-arrow-left"><svg width="50" height="50" viewBox="0 0 24 24">
+
+        <div class="icon-arrow icon-arrow-left">
+          <svg width="50" height="50" viewBox="0 0 24 24">
             <use xlink:href="#arrow-left"></use>
-          </svg></div>
-        <div class="icon-arrow icon-arrow-right"><svg width="50" height="50" viewBox="0 0 24 24">
+          </svg>
+        </div>
+        <div class="icon-arrow icon-arrow-right">
+          <svg width="50" height="50" viewBox="0 0 24 24">
             <use xlink:href="#arrow-right"></use>
-          </svg></div>
+          </svg>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -478,7 +662,7 @@
             <div class="cat-item image-zoom-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/cat-item1.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/cat-item1.webp" alt="categories" class="product-images img-fluid">
                 </a>
               </div>
               <div class="category-content">
@@ -492,7 +676,7 @@
             <div class="cat-item image-zoom-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/cat-item2.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/cat-item2.webp" alt="categories" class="product-images img-fluid">
                 </a>
               </div>
               <div class="category-content">
@@ -506,7 +690,7 @@
             <div class="cat-item image-zoom-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/cat-item3.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/cat-item3.webp" alt="categories" class="product-images img-fluid">
                 </a>
               </div>
               <div class="category-content">
@@ -533,7 +717,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder position-relative">
                 <a href="index.html">
-                  <img src="images/product-item-1.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/1.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -544,7 +728,6 @@
                   <h5 class="element-title text-uppercase fs-5 mt-3">
                     <a href="index.html">Dark florish onepiece</a>
                   </h5>
-                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$95.00</span></a>
                 </div>
               </div>
             </div>
@@ -553,7 +736,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder position-relative">
                 <a href="index.html">
-                  <img src="images/product-item-2.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/2.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -564,7 +747,6 @@
                   <h5 class="text-uppercase fs-5 mt-3">
                     <a href="index.html">Baggy Shirt</a>
                   </h5>
-                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$55.00</span></a>
                 </div>
               </div>
             </div>
@@ -573,7 +755,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder position-relative">
                 <a href="index.html">
-                  <img src="images/product-item-3.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/3.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -584,7 +766,6 @@
                   <h5 class="text-uppercase fs-5 mt-3">
                     <a href="index.html">Cotton off-white shirt</a>
                   </h5>
-                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$65.00</span></a>
                 </div>
               </div>
             </div>
@@ -593,7 +774,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder position-relative">
                 <a href="index.html">
-                  <img src="images/product-item-4.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/4.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -604,7 +785,6 @@
                   <h5 class="text-uppercase fs-5 mt-3">
                     <a href="index.html">Crop sweater</a>
                   </h5>
-                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$50.00</span></a>
                 </div>
               </div>
             </div>
@@ -613,7 +793,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder position-relative">
                 <a href="index.html">
-                  <img src="images/product-item-10.jpg" alt="categories" class="product-image img-fluid">
+                  <img src="images/cat-sm-item.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -624,7 +804,6 @@
                   <h5 class="text-uppercase fs-5 mt-3">
                     <a href="index.html">Crop sweater</a>
                   </h5>
-                  <a href="#" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
                 </div>
               </div>
             </div>
@@ -648,7 +827,7 @@
         <div class="collection-item d-flex flex-wrap my-5">
           <div class="col-md-6 column-container">
             <div class="image-holder">
-              <img src="images/single-image-2.jpg" alt="collection" class="product-image img-fluid">
+              <img src="images/single-image-2.jpg" alt="collection" class="product-images img-fluid">
             </div>
           </div>
           <div class="col-md-6 column-container bg-white">
@@ -668,8 +847,10 @@
   <section id="best-sellers" class="best-sellers product-carousel py-5 position-relative overflow-hidden">
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mt-5 mb-3">
-        <h4 class="text-uppercase">What’s Trending — Curated by Azea</h4>
-        <a href="index.html" class="btn-link">View All Products</a>
+        <h4 class="text-uppercase">Try your style with Azea</h4>
+        <button class="btn btn-primary text-uppercase" id="uploadImageBtn">
+          <i class="fas fa-upload me-2"></i>Upload Image
+        </button>
       </div>
       <div class="swiper product-swiper open-up" data-aos="zoom-out">
         <div class="swiper-wrapper d-flex">
@@ -677,7 +858,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/1.png" alt="categories" class="product-image img-fluid">
+                  <img src="images/1.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -691,6 +872,11 @@
                   <a href="index.html" class="text-decoration-none"><span>Oversized hoodie + Cargo pants + High-top
                       Sneakers</span></a>
                 </div>
+                <div class="thumbnail-images">
+                  <img src="images/1.webp" alt="thumbnail 1" class="thumbnail-img product-image">
+                  <img src="images/2.webp" alt="thumbnail 2" class="thumbnail-img product-image">
+                  <img src="images/3.webp" alt="thumbnail 3" class="thumbnail-img product-image">
+                </div>
               </div>
             </div>
           </div>
@@ -698,7 +884,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/2.png" alt="product" class="product-image img-fluid">
+                  <img src="images/2.webp" alt="product" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -712,6 +898,11 @@
                   <a href="index.html" class="text-decoration-none" data-after=""><span>Flowy floral dress + crossbody
                       bag + flat sandals</span></a>
                 </div>
+                <div class="thumbnail-images">
+                  <img src="images/1.webp" alt="thumbnail 1" class="thumbnail-img product-image">
+                  <img src="images/2.webp" alt="thumbnail 2" class="thumbnail-img product-image">
+                  <img src="images/3.webp" alt="thumbnail 3" class="thumbnail-img product-image">
+                </div>
               </div>
             </div>
           </div>
@@ -719,7 +910,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/3.png" alt="categories" class="product-image img-fluid">
+                  <img src="images/3.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -733,6 +924,11 @@
                   <a href="index.html" class="text-decoration-none" data-after=""><span> Black satin top + leather skirt
                       + heels</span></a>
                 </div>
+                <div class="thumbnail-images">
+                  <img src="images/1.webp" alt="thumbnail 1" class="thumbnail-img product-image">
+                  <img src="images/2.webp" alt="thumbnail 2" class="thumbnail-img product-image">
+                  <img src="images/3.webp" alt="thumbnail 3" class="thumbnail-img product-image">
+                </div>
               </div>
             </div>
           </div>
@@ -740,7 +936,7 @@
             <div class="product-item image-zoom-effect link-effect">
               <div class="image-holder">
                 <a href="index.html">
-                  <img src="images/4.png" alt="categories" class="product-image img-fluid">
+                  <img src="images/4.webp" alt="categories" class="product-images img-fluid">
                 </a>
                 <a href="index.html" class="btn-icon btn-wishlist">
                   <svg width="24" height="24" viewBox="0 0 24 24">
@@ -754,49 +950,15 @@
                   <a href="index.html" class="text-decoration-none" data-after=""><span>White button-down + tailored
                       trousers + loafers</span></a>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="product-item image-zoom-effect link-effect">
-              <div class="image-holder">
-                <a href="index.html">
-                  <img src="images/product-item-9.jpg" alt="categories" class="product-image img-fluid">
-                </a>
-                <a href="index.html" class="btn-icon btn-wishlist">
-                  <svg width="24" height="24" viewBox="0 0 24 24">
-                    <use xlink:href="#heart"></use>
-                  </svg>
-                </a>
-                <div class="product-content">
-                  <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Dark florish onepiece</a>
-                  </h5>
-                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
+                <div class="thumbnail-images">
+                  <img src="images/1.webp" alt="thumbnail 1" class="thumbnail-img product-image">
+                  <img src="images/2.webp" alt="thumbnail 2" class="thumbnail-img product-image">
+                  <img src="images/3.webp" alt="thumbnail 3" class="thumbnail-img product-image">
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="product-item image-zoom-effect link-effect">
-              <div class="image-holder">
-                <a href="index.html">
-                  <img src="images/product-item-10.jpg" alt="categories" class="product-image img-fluid">
-                </a>
-                <a href="index.html" class="btn-icon btn-wishlist">
-                  <svg width="24" height="24" viewBox="0 0 24 24">
-                    <use xlink:href="#heart"></use>
-                  </svg>
-                </a>
-                <div class="product-content">
-                  <h5 class="text-uppercase fs-5 mt-3">
-                    <a href="index.html">Cotton off-white shirt</a>
-                  </h5>
-                  <a href="index.html" class="text-decoration-none" data-after="Add to cart"><span>$70.00</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
         <div class="swiper-pagination"></div>
       </div>
@@ -807,11 +969,16 @@
           <use xlink:href="#arrow-right"></use>
         </svg></div>
     </div>
+    <div class="d-flex flex-wrap justify-content-end align-items-center mt-5 mb-3">
+      <a href="index.html" class="btn-link">View All Products</a>
+    </div>
+
   </section>
 
   <div class="video-bg">
-  <img id="video-main-image" src="images/video-image.jpg" alt="video" class="video-image img-fluid">
-</div>
+    <img id="video-main-image" src="images/1.webp" alt="video" class="video-image img-fluid">
+  </div>
+
 
 
   <section class="testimonials py-5 bg-light">
@@ -869,7 +1036,7 @@
     <div class="testimonial-swiper-pagination d-flex justify-content-center mb-5"></div>
   </section>
 
-  <section class="newsletter bg-light" style="background: url(images/pattern-bg.png) no-repeat;">
+  <section class="newsletter bg-light" style="background: url(images/pattern-bg.webp) no-repeat;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 py-5 my-5">
@@ -892,7 +1059,7 @@
           <div class="footer-menu footer-menu-001">
             <div class="footer-intro mb-4">
               <a href="index.html">
-                <img src="./images/logo/logo.png" alt="logo" style="width: 100px;">
+                <img src="./images/logo/logo.webp" alt="logo" style="width: 100px;">
               </a>
             </div>
             <p>Azea lets you create your personal 3D avatar and virtually try on clothes before you buy. Say goodbye to
@@ -971,9 +1138,14 @@
     <div class="border-top py-4">
       <div class="container">
         <div class="row">
-
           <div class="col-md-12 text-center">
-            <p>© Copyright 2025 Azea. All rights reserved.</p>
+            <p>
+              ©
+              <script>document.write(new Date().getFullYear());</script> Azea. All rights reserved.
+            </p>
+            <p>
+              Created by <a href="https://tanemirt-tech.com/" class="text-decoration-none">Tanemirt-Tech</a>
+            </p>
           </div>
         </div>
       </div>
@@ -987,9 +1159,10 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="js/script.min.js"></script>
+  <!-- JS for clickable images -->
   <script>
-    // Select all product images
-    const productImages = document.querySelectorAll('.product-image');
+    // Select all product images (including thumbnails)
+    const productImages = document.querySelectorAll('.product-images, .product-image');
 
     // Select the video image
     const videoImage = document.getElementById('video-main-image');
@@ -1002,6 +1175,28 @@
         // Change the video image to the clicked product image
         videoImage.src = this.src;
       });
+    });
+    document.getElementById('uploadImageBtn').addEventListener('click', function () {
+      // Create a hidden file input
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*';
+      fileInput.style.display = 'none';
+
+      // Handle file selection
+      fileInput.addEventListener('change', function (e) {
+        if (e.target.files.length > 0) {
+          const file = e.target.files[0];
+          // Here you would typically send the file to your server
+          console.log('Selected file:', file.name);
+          alert('Image selected: ' + file.name);
+        }
+      });
+
+      // Trigger file selection
+      document.body.appendChild(fileInput);
+      fileInput.click();
+      document.body.removeChild(fileInput);
     });
   </script>
 
